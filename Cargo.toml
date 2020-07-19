@@ -2,6 +2,11 @@
 name = "enum_default"
 version = "0.1.0"
 authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
+description = """
+enum_default provides an EnumDefault derive macro 
+that provides a std::Default implementation
+for Enums by using the first value
+"""
 edition = "2018"
 license = "MIT"
 

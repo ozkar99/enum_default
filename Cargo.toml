@@ -1,0 +1,13 @@
+[package]
+name = "enum_default"
+version = "0.1.0"
+authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
+edition = "2018"
+license = "MIT"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "1.0"
+quote = "1.0"

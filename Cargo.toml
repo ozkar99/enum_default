@@ -1,7 +1,8 @@
 [package]
 name = "enum_default"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
+repository = "https://github.com/ozkar99/enum_default"
 description = """
 enum_default provides an EnumDefault derive macro 
 that provides a std::Default implementation

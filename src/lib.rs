@@ -17,7 +17,8 @@ pub fn enum_default_derive(input: TokenStream) -> TokenStream {
             }
 
             let name = ast.ident;
-            let first = data.variants.first();
+            let first_variant = data.variants.first().unwrap();
+            let first = &first_variant.ident;
 
             let result = quote! {
               impl Default for #name {

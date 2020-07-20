@@ -15,11 +15,6 @@ enum TestEnum2 {
 }
 
 fn main() {
-    if TestEnum::default() == TestEnum::First {
-        println!("It's the first item")
-    }
-
-    if TestEnum2::default() == TestEnum2::Second {
-        println!("It's the second item")
-    }
+    assert!(TestEnum::default() == TestEnum::First);
+    assert!(TestEnum2::default() == TestEnum2::Second);
 }

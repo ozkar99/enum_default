@@ -1,6 +1,6 @@
 [package]
 name = "enum_default"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
 repository = "https://github.com/ozkar99/enum_default"
 description = """

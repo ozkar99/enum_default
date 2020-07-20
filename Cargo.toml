@@ -1,12 +1,12 @@
 [package]
 name = "enum_default"
-version = "0.2.4"
+version = "0.2.5"
 authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
 repository = "https://github.com/ozkar99/enum_default"
 description = """
 enum_default provides an EnumDefault derive macro 
 that provides a std::Default implementation
-for Enums by using the first value
+for Enums by using the first value or specifying a #[default] attribute
 """
 edition = "2018"
 license = "MIT"

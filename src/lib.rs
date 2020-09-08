@@ -14,13 +14,14 @@ pub fn enum_default_derive(input: TokenStream) -> TokenStream {
                 return TokenStream::default();
             }
             let name = ast.ident;
+            let generics = ast.generics;
 
             // check if they have the "#[default]" attribute
             let iter = data.variants.iter();
             for variant in iter {
                 for attr in &variant.attrs {
                     if attr.path.is_ident("default") {
-                        return impl_enum_default(&name, &variant.ident);
+                        return impl_enum_default(&name, &generics, &variant.ident);
                     }
                 }
             }
@@ -28,17 +29,21 @@ pub fn enum_default_derive(input: TokenStream) -> TokenStream {
             // fallback to the first item
             let first_variant = data.variants.first().unwrap();
             let variant = &first_variant.ident;
-            impl_enum_default(&name, variant)
+            impl_enum_default(&name, &generics, variant)
         }
         _ => TokenStream::default(),
     }
 }
 
-fn impl_enum_default(name: &syn::Ident, variant: &syn::Ident) -> TokenStream {
+fn impl_enum_default(
+    name: &syn::Ident,
+    generics: &syn::Generics,
+    variant: &syn::Ident,
+) -> TokenStream {
     let result = quote! {
-      impl Default for #name {
-        fn default() -> #name {
-          #name::#variant
+      impl#generics Default for #name#generics {
+        fn default() -> Self {
+          Self::#variant
         }
       }
     };

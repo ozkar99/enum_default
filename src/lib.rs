@@ -4,6 +4,7 @@ use quote::quote;
 
 /// EnumDefault provides a std::Default implementation for enums
 /// by using the first item as the return of <enum>::default()
+#[deprecated(note="Superseded by https://rust-lang.github.io/rfcs/3107-derive-default-enum.html")]
 #[proc_macro_derive(EnumDefault, attributes(default))]
 pub fn enum_default_derive(input: TokenStream) -> TokenStream {
     let ast: syn::DeriveInput = syn::parse(input).unwrap();

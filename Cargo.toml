@@ -1,9 +1,13 @@
 [package]
 name = "enum_default"
-version = "0.2.5"
+version = "0.2.6"
 authors = ["Oscar Moreno <oscarmg99@gmail.com>"]
 repository = "https://github.com/ozkar99/enum_default"
 description = """
+
+DEPRECATED PLEASE SEE: https://rust-lang.github.io/rfcs/3107-derive-default-enum.html
+----------------------------------------------------------------------------------------
+
 enum_default provides an EnumDefault derive macro 
 that provides a std::Default implementation
 for Enums by using the first value or specifying a #[default] attribute
@@ -17,3 +21,6 @@ proc-macro = true
 [dependencies]
 syn = "1.0"
 quote = "1.0"
+
+[badges]
+maintenance = { status = "deprecated" }
